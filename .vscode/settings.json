@@ -1,7 +1,41 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
+  // 1. Define o ESLint como o formatador padrão
+  // Isso faz com que "Formatar Documento" (Alt+Shift+F) execute o ESLint
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+  // 2. Desativa o formatador padrão do Prettier (para evitar conflitos)
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // 3. ESTA É A PARTE MAIS IMPORTANTE:
+  // Diz ao VS Code para rodar o "autofix" do ESLint toda vez que você salvar
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // (Opcional, mas recomendado) Garante que o ESLint valide todos os seus arquivos
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // Testando configurações
+
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.5,
+  "editor.rulers": [80, 120],
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.renderLineHighlight": "all",
+  "explorer.compactFolders": false,
+  "editor.semanticHighlighting.enabled": false,
+  "workbench.activityBar.location": "top",
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+
 }
